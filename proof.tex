@@ -1,0 +1,160 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{geometry}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+
+\title{COMP 382 Assignment 2 - Topic 1\\
+Context-Free Languages are not closed under intersection}
+\author{Group Members: [Tanisha, Natasha, Ritu, Liam]}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+In this assignment, we demonstrate that the set of context-free languages is not closed under the operation of intersection. We prove this by showing that the language $L = \{a^n b^n c^n \mid n \geq 0\}$ is not context-free, but can be expressed as the intersection of two context-free languages.
+
+\section{Construction of Two Context-Free Languages}
+
+\subsection{Language L1}
+
+Let $L_1 = \{a^i b^j c^k \mid i = j, i,j,k \geq 0\}$.
+
+\begin{definition}
+The context-free grammar $G_1$ for $L_1$ is defined as:
+\begin{align}
+S &\to AB \\
+A &\to aAb \mid ab \\
+B &\to Bc \mid c \mid \varepsilon
+\end{align}
+\end{definition}
+
+The nonterminal $A$ generates strings of the form $a^n b^n$ for $n \geq 1$, and $B$ generates strings of the form $c^k$ for $k \geq 0$. Therefore, $L_1$ contains all strings where the number of $a$'s equals the number of $b$'s, followed by any number of $c$'s.
+
+\subsection{Language L2}
+
+Let $L_2 = \{a^i b^j c^k \mid j = k, i,j,k \geq 0\}$.
+
+\begin{definition}
+The context-free grammar $G_2$ for $L_2$ is defined as:
+\begin{align}
+S &\to AB \\
+A &\to aA \mid a \mid \varepsilon \\
+B &\to bBc \mid bc
+\end{align}
+\end{definition}
+
+The nonterminal $A$ generates strings of the form $a^i$ for $i \geq 0$, and $B$ generates strings of the form $b^n c^n$ for $n \geq 1$. Therefore, $L_2$ contains all strings with any number of $a$'s followed by equal numbers of $b$'s and $c$'s.
+
+\section{Intersection of L1 and L2}
+
+\begin{theorem}
+$L_1 \cap L_2 = \{a^n b^n c^n \mid n \geq 0\}$
+\end{theorem}
+
+\begin{proof}
+Let $w \in L_1 \cap L_2$. Then $w \in L_1$ and $w \in L_2$.
+
+Since $w \in L_1$, we have $w = a^i b^j c^k$ where $i = j$.
+
+Since $w \in L_2$, we have $w = a^i b^j c^k$ where $j = k$.
+
+Therefore, $i = j = k$, which means $w = a^n b^n c^n$ for some $n \geq 0$.
+
+Conversely, if $w = a^n b^n c^n$ for some $n \geq 0$, then:
+\begin{itemize}
+\item $w \in L_1$ because the number of $a$'s equals the number of $b$'s
+\item $w \in L_2$ because the number of $b$'s equals the number of $c$'s
+\end{itemize}
+
+Therefore, $w \in L_1 \cap L_2$.
+
+Hence, $L_1 \cap L_2 = \{a^n b^n c^n \mid n \geq 0\}$.
+\end{proof}
+
+\section{Proof that L is not Context-Free}
+
+\begin{theorem}
+The language $L = \{a^n b^n c^n \mid n \geq 0\}$ is not context-free.
+\end{theorem}
+
+\begin{proof}
+We prove this by contradiction using the pumping lemma for context-free languages.
+
+\begin{lemma}[Pumping Lemma for Context-Free Languages]
+If $L$ is a context-free language, then there exists a constant $p > 0$ such that for any string $s \in L$ with $|s| \geq p$, we can write $s = uvwxy$ where:
+\begin{enumerate}[(i)]
+\item $|vwx| \leq p$
+\item $|vx| \geq 1$
+\item For all $i \geq 0$, $uv^i wx^i y \in L$
+\end{enumerate}
+\end{lemma}
+
+Assume, for the sake of contradiction, that $L$ is context-free. Let $p$ be the pumping length guaranteed by the pumping lemma.
+
+Consider the string $s = a^p b^p c^p$. Since $s \in L$ and $|s| = 3p \geq p$, the pumping lemma applies.
+
+By the pumping lemma, we can write $s = uvwxy$ where conditions (i), (ii), and (iii) hold.
+
+We analyze all possible cases for the position of the substring $vwx$:
+
+\textbf{Case 1:} $vwx$ contains only $a$'s.
+Then $v = a^k$ and $x = a^m$ for some $k, m \geq 0$ with $k + m \geq 1$.
+Pumping up with $i = 2$, we get $uv^2 wx^2 y = a^{p+k+m} b^p c^p$.
+This string has more $a$'s than $b$'s or $c$'s, so it is not in $L$.
+
+\textbf{Case 2:} $vwx$ contains only $b$'s.
+Then $v = b^k$ and $x = b^m$ for some $k, m \geq 0$ with $k + m \geq 1$.
+Pumping up with $i = 2$, we get $uv^2 wx^2 y = a^p b^{p+k+m} c^p$.
+This string has more $b$'s than $a$'s or $c$'s, so it is not in $L$.
+
+\textbf{Case 3:} $vwx$ contains only $c$'s.
+Then $v = c^k$ and $x = c^m$ for some $k, m \geq 0$ with $k + m \geq 1$.
+Pumping up with $i = 2$, we get $uv^2 wx^2 y = a^p b^p c^{p+k+m}$.
+This string has more $c$'s than $a$'s or $b$'s, so it is not in $L$.
+
+\textbf{Case 4:} $vwx$ spans across $a$'s and $b$'s.
+Since $|vwx| \leq p$, the substring $vwx$ cannot span all three types of symbols.
+Pumping will create an imbalance between the number of $a$'s and $b$'s on one side, and $c$'s on the other side, so the resulting string is not in $L$.
+
+\textbf{Case 5:} $vwx$ spans across $b$'s and $c$'s.
+Similar to Case 4, since $|vwx| \leq p$, pumping will create an imbalance between the number of $b$'s and $c$'s on one side, and $a$'s on the other side, so the resulting string is not in $L$.
+
+In all cases, pumping leads to a string that is not in $L$, which contradicts condition (iii) of the pumping lemma.
+
+Therefore, our assumption that $L$ is context-free must be false. Hence, $L = \{a^n b^n c^n \mid n \geq 0\}$ is not context-free.
+\end{proof}
+
+\section{Conclusion}
+
+We have successfully demonstrated that:
+
+\begin{enumerate}
+\item We constructed two context-free languages $L_1$ and $L_2$.
+\item We showed that $L_1 \cap L_2 = \{a^n b^n c^n \mid n \geq 0\}$.
+\item We proved that $\{a^n b^n c^n \mid n \geq 0\}$ is not context-free using the pumping lemma.
+\end{enumerate}
+
+Therefore, the set of context-free languages is not closed under the operation of intersection.
+
+\section{References}
+
+\begin{itemize}
+\item Hopcroft, J. E., Motwani, R., \& Ullman, J. D. (2006). \textit{Introduction to Automata Theory, Languages, and Computation} (3rd ed.). Addison-Wesley.
+\item Sipser, M. (2012). \textit{Introduction to the Theory of Computation} (3rd ed.). Cengage Learning.
+\end{itemize}
+
+\end{document}
