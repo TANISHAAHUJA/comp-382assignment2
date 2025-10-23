@@ -8,6 +8,11 @@
 ### Overview
 This project demonstrates that the set of context-free languages is not closed under the operation of intersection. We prove this by showing that the language {a^n b^n c^n | n ≥ 0} is not context-free, but can be expressed as the intersection of two context-free languages.
 
+### Contribuitions can be tracked here 
+Our development process can be tracked through our git commits at:
+https://github.com/TANISHAAHUJA/comp-382assignment2/commits/main
+
+
 ### Mathematical Proof
 
 The complete mathematical proof is provided in `proof.tex` (LaTeX format). The proof includes:
