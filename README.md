@@ -3,7 +3,7 @@
 ## Context-Free Languages are not closed under intersection
 
 ### Group Members
-- Ritu Randhawa, Liam Maarhuis, Tanisha Ahuja, Natasha, Maundu
+- Ritu Randhawa, Liam Maarhuis, Tanisha Ahuja, Natasha Maundu
 
 ### Overview
 This project demonstrates that the set of context-free languages is not closed under the operation of intersection. We prove this by showing that the language {a^n b^n c^n | n ≥ 0} is not context-free, but can be expressed as the intersection of two context-free languages.
@@ -20,10 +20,17 @@ This project demonstrates that the set of context-free languages is not closed u
 - Created visual representations for set intersections, parse trees, and the Pumping Lemma enhancing readability
 - Contributed to documentation by integrating diagrams and explanations
 
+#### Ritu Randhawa
+- Proof design and write up
+- Proofread documentation and corrected errors
+- Helped edit slides
+- Bonus participation discussion with the other team and working on implementing the feedback
+
+#### Liam Maarhuis
+
 ### Contribuitions can be tracked here 
 Our development process can be tracked through our git commits at:
 https://github.com/TANISHAAHUJA/comp-382assignment2/commits/main
-
 
 ### Mathematical Proof
 
@@ -69,6 +76,10 @@ We have successfully demonstrated that:
 1. Two context-free languages can have a non-context-free intersection
 2. The specific example {a^n b^n c^n | n ≥ 0} serves as a counterexample
 3. This proves that the set of context-free languages is not closed under intersection
+
+### Assignment Bonus
+For the bonus, we met with another group and they gave us some feedback on the Introduction of the proof and we will be implementing that. (Proof of this conversation is provided in a jpg here in git). The Professor also gave us feedback about adding some citations from the textbook so we will be working on that as well. 
+
 
 ### References
 
