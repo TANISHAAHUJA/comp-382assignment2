@@ -15,9 +15,10 @@ This project demonstrates that the set of context-free languages is not closed u
 - LaTeX documentation of formal proofs
 - Computational demonstration of theoretical concepts
 
-
-
-
+#### Natasha Maundu
+- Designed and illustrated project diagrams using draw.io
+- Created visual representations for set intersections, parse trees, and the Pumping Lemma enhancing readability
+- Contributed to documentation by integrating diagrams and explanations
 
 ### Contribuitions can be tracked here 
 Our development process can be tracked through our git commits at:
