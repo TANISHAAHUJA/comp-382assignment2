@@ -95,11 +95,11 @@ The language $L = \{a^n b^n c^n \mid n \geq 0\}$ is not context-free.
 We prove this by contradiction using the pumping lemma for context-free languages.
 
 \begin{lemma}[Pumping Lemma for Context-Free Languages]
-If $L$ is a context-free language, then there exists a constant $p > 0$ such that for any string $s \in L$ with $|s| \geq p$, we can write $s = uvwxy$ where:
+If $L$ is a context-free language, then there exists a constant $p > 0$ such that for any string $s \in L$ with $|s| \geq p$, we can write $s = uvzxy$ where:
 \begin{enumerate}[(i)]
-\item $|vwx| \leq p$
+\item $|vzx| \leq p$
 \item $|vx| \geq 1$
-\item For all $i \geq 0$, $uv^i wx^i y \in L$
+\item For all $i \geq 0$, $uv^i zx^i y \in L$
 \end{enumerate}
 \end{lemma}
 
@@ -107,31 +107,31 @@ Assume, for the sake of contradiction, that $L$ is context-free. Let $p$ be the 
 
 Consider the string $s = a^p b^p c^p$. Since $s \in L$ and $|s| = 3p \geq p$, the pumping lemma applies.
 
-By the pumping lemma, we can write $s = uvwxy$ where conditions (i), (ii), and (iii) hold.
+By the pumping lemma, we can write $s = uvzxy$ where conditions (i), (ii), and (iii) hold.
 
-We analyze all possible cases for the position of the substring $vwx$:
+We analyze all possible cases for the position of the substring $vzx$:
 
-\textbf{Case 1:} $vwx$ contains only $a$'s.
+\textbf{Case 1:} $vzx$ contains only $a$'s.
 Then $v = a^k$ and $x = a^m$ for some $k, m \geq 0$ with $k + m \geq 1$.
-Pumping up with $i = 2$, we get $uv^2 wx^2 y = a^{p+k+m} b^p c^p$.
+Pumping up with $i = 2$, we get $uv^2 zx^2 y = a^{p+k+m} b^p c^p$.
 This string has more $a$'s than $b$'s or $c$'s, so it is not in $L$.
 
-\textbf{Case 2:} $vwx$ contains only $b$'s.
+\textbf{Case 2:} $vzx$ contains only $b$'s.
 Then $v = b^k$ and $x = b^m$ for some $k, m \geq 0$ with $k + m \geq 1$.
-Pumping up with $i = 2$, we get $uv^2 wx^2 y = a^p b^{p+k+m} c^p$.
+Pumping up with $i = 2$, we get $uv^2 zx^2 y = a^p b^{p+k+m} c^p$.
 This string has more $b$'s than $a$'s or $c$'s, so it is not in $L$.
 
-\textbf{Case 3:} $vwx$ contains only $c$'s.
+\textbf{Case 3:} $vzx$ contains only $c$'s.
 Then $v = c^k$ and $x = c^m$ for some $k, m \geq 0$ with $k + m \geq 1$.
-Pumping up with $i = 2$, we get $uv^2 wx^2 y = a^p b^p c^{p+k+m}$.
+Pumping up with $i = 2$, we get $uv^2 zx^2 y = a^p b^p c^{p+k+m}$.
 This string has more $c$'s than $a$'s or $b$'s, so it is not in $L$.
 
-\textbf{Case 4:} $vwx$ spans across $a$'s and $b$'s.
-Since $|vwx| \leq p$, the substring $vwx$ cannot span all three types of symbols.
+\textbf{Case 4:} $vzx$ spans across $a$'s and $b$'s.
+Since $|vzx| \leq p$, the substring $vzx$ cannot span all three types of symbols.
 Pumping will create an imbalance between the number of $a$'s and $b$'s on one side, and $c$'s on the other side, so the resulting string is not in $L$.
 
-\textbf{Case 5:} $vwx$ spans across $b$'s and $c$'s.
-Similar to Case 4, since $|vwx| \leq p$, pumping will create an imbalance between the number of $b$'s and $c$'s on one side, and $a$'s on the other side, so the resulting string is not in $L$.
+\textbf{Case 5:} $vzx$ spans across $b$'s and $c$'s.
+Similar to Case 4, since $|vzx| \leq p$, pumping will create an imbalance between the number of $b$'s and $c$'s on one side, and $a$'s on the other side, so the resulting string is not in $L$.
 
 In all cases, pumping leads to a string that is not in $L$, which contradicts condition (iii) of the pumping lemma.
 
