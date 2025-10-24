@@ -27,6 +27,8 @@ This project demonstrates that the set of context-free languages is not closed u
 - Bonus participation discussion with the other team and working on implementing the feedback
 
 #### Liam Maarhuis
+- Created Slides
+- Helped review documents
 
 ### Contribuitions can be tracked here 
 Our development process can be tracked through our git commits at:
