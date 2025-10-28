@@ -25,6 +25,7 @@ This project demonstrates that the set of context-free languages is not closed u
 - Proofread documentation and corrected errors
 - Helped edit slides
 - Bonus participation discussion with the other team and working on implementing the feedback
+- Fixed slides after feedback was provided and implemented the bonus
 
 #### Liam Maarhuis
 - Created Slides
@@ -81,6 +82,8 @@ We have successfully demonstrated that:
 
 ### Assignment Bonus
 For the bonus, we met with another group and they gave us some feedback on the Introduction of the proof and we will be implementing that. (Proof of this conversation is provided in a jpg here in git). The Professor also gave us feedback about adding some citations from the textbook so we will be working on that as well. 
+
+Oct 27, 2025: The introduction has been updated as per the challenge and the slides and the rest of the documentation has been fixed per the feedback.
 
 ### References
 
