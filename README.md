@@ -82,8 +82,8 @@ We have successfully demonstrated that:
 ### Assignment Bonus
 For the bonus, we met with another group and they gave us some feedback on the Introduction of the proof and we will be implementing that. (Proof of this conversation is provided in a jpg here in git). The Professor also gave us feedback about adding some citations from the textbook so we will be working on that as well. 
 
-
 ### References
 
-- Hopcroft, Motwani, Ullman: "Introduction to Automata Theory, Languages, and Computation"
-- Sipser: "Introduction to the Theory of Computation"
+-Hopcroft, John E., Rajeev Motwani, and Jeffrey D. Ullman. "Introduction to automata theory, languages, and computation." Acm Sigact News 32.1 (2001): 60-65. https://doi.org/10.1145/568438.56845​
+
+-Sipser, Michael. "Introduction to the Theory of Computation." ACM Sigact News 27.1 (1996): 27-29. http://www-math.mit.edu/-sipser/book.html 
